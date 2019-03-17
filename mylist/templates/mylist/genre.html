@@ -1,0 +1,9 @@
+<a href="{% url 'mylist:mainpage' %}">mainpage</a>
+<a href="{% url 'mylist:mylist' %}">mylist</a>
+<h1>{{ datas.genre_name }}</h1>
+<div class="content">
+  연관작품
+    {% for title in titles %}
+        <p>{{ title }}</p>
+    {% endfor %}
+</div>

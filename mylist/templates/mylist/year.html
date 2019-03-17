@@ -1,0 +1,9 @@
+<a href="{% url 'mylist:mainpage' %}">mainpage</a>
+<a href="{% url 'mylist:mylist' %}">mylist</a>
+<h1>{{ datas.year }}</h1>
+<div class="content">
+    <p>해당 연도 작품들</p>
+    {% for title in titles %}
+        <p>{{ title }}</p>
+    {% endfor %}
+</div>

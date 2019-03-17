@@ -1,0 +1,10 @@
+<a href="{% url 'mylist:mainpage' %}">mainpage</a>
+<a href="{% url 'mylist:mylist' %}">mylist</a>
+<h1>{{ datas.production_name }}</h1>
+<div class="content">
+    <p>설명: {{ datas.production_info }}</p>
+    <p>연관작품</p>
+    {% for title in titles %}
+        <p>{{ title }}</p>
+    {% endfor %}
+</div>

@@ -1,0 +1,10 @@
+<a href="{% url 'mylist:mainpage' %}">mainpage</a>
+<h1>Mylist</h1>
+<a href="{% url 'mylist:production_list' %}">productions</a>
+<a href="{% url 'mylist:genre_list' %}">Genres</a>
+<a href="{% url 'mylist:year_list' %}">Years</a>
+<div class="list">
+  {% for data in datas %}
+      <p><a href="{% url 'mylist:title_detail' title_slug=data.title_slug %}">{{ data.title }}</a></p>
+  {% endfor %}
+</div>

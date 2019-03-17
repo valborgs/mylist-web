@@ -1,0 +1,8 @@
+<a href="{% url 'mylist:mainpage' %}">mainpage</a>
+<a href="{% url 'mylist:mylist' %}">mylist</a>
+<h1>Years</h1>
+<div class="list">
+  {% for data in datas %}
+      <p><a href="{% url 'mylist:year_detail' year_slug=data.year_slug %}">{{ data.year }}</a></p>
+  {% endfor %}
+</div>
