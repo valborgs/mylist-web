@@ -13,7 +13,7 @@
     {% endif %}
   </p>
   <p>제작사: <a href="{% url 'mylist:production_detail' production_slug=datas.production.production_slug %}">{{ datas.production }}</a></p>
-  <p>제작년도: <a href="{% url 'mylist:year_detail' year_slug=datas.year.year_slug %}"></a>{{ datas.year }}</p>
+  <p>제작년도: <a href="{% url 'mylist:year_detail' year_slug=datas.year.year_slug %}">{{ datas.year }}</a></p>
   <p>분기: {{ datas.quarter }}</p>
   <p>조회수: {{ datas.viewcount }}</p>
   <p>좋아요: {{ datas.userlikes }}</p>
