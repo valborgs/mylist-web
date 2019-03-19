@@ -4,6 +4,6 @@
 <div class="content">
     <p>해당 연도 작품들</p>
     {% for title in titles %}
-        <p>{{ title }}</p>
+        <p><a href="{% url 'mylist:title_detail' title_slug=title.title_slug %}">{{ title }}</a></p>
     {% endfor %}
 </div>
