@@ -1,2 +1,3 @@
-
 *.pyc
+mylist/__pycache__/models.cpython-36.pyc
+mylist/__pycache__/views.cpython-36.pyc
