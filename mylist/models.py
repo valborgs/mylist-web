@@ -97,10 +97,23 @@ class MylistTitle(models.Model):
 
     title_slug = models.SlugField(blank=True, allow_unicode=True, unique=True, db_index=True)
 
-    genre = models.ForeignKey(MylistGenre,
+    genre1 = models.ForeignKey(MylistGenre,
                               default=1,
                               verbose_name="Genres",
                               on_delete=models.SET_DEFAULT)
+    genre2 = models.ForeignKey(MylistGenre,
+                              verbose_name="Genres",
+                              default=None,
+                              on_delete=models.SET_NULL,
+                              null=True,
+                              related_name='genre2')
+    genre3 = models.ForeignKey(MylistGenre,
+                              verbose_name="Genres",
+                              default=None,
+                              on_delete=models.SET_NULL,
+                              null=True,
+                              related_name='genre3')
+
     production = models.ForeignKey(MylistProduction,
                                    default=1,
                                    verbose_name="Productions",

@@ -44,7 +44,7 @@ def genre_detail(request, genre_slug):
     related_titles = []
 
     for x in titles:
-        if x.genre == datas:
+        if x.genre1 == datas or x.genre2 == datas or x.genre3 == datas:
             related_titles.append(x)
         else:
             continue

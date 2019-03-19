@@ -8,7 +8,7 @@ from .models import MylistTitle, MylistGenre, MylistProduction, MylistYear, Myli
 class addnewtitle(admin.ModelAdmin):
 
     fieldsets = [
-        ('options', {'fields':['genre', 'production', 'year', 'quarter']}),
+        ('options', {'fields':['genre1', 'genre2', 'genre3', 'production', 'year', 'quarter']}),
         ('contents', {'fields':['title', 'summary', 'title_img']}),
         ('url', {'fields':['title_slug']}),
     ]
