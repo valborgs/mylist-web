@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MYLIST</title>
+    {% load static %}
+    <link type="text/css" rel="stylesheet" href="{% static "css/selfcss.css" %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static "css/materialize.min.css" %}">
+    <link type="text/css" rel="stylesheet" href="{% static "css/mainpage-img.css" %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {{ form.media }}
+  </head>
+  <body>
+    <header>
+      {% block header %}
+      {% include "mylist/header.html" %}
+      {% endblock %}
+    </header>
+    <main>
+      {% block main %}
+      {% endblock %}
+    </main>
+    <footer class="page-footer" style="padding-top:10px; margin-top:10px;">
+      {% block footer %}
+      {% include "mylist/footer.html" %}
+      {% endblock %}
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src={% static "js/materialize.min.js" %}></script>
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success'%}
+                <script>M.toast({html: "{{message}}", classes: 'pink rounded', displayLength:2000});</script>
+            {% elif message.tags == 'info'%}
+                <script>M.toast({html: "{{message}}", classes: 'pink rounded', displayLength:2000});</script>
+            {% elif message.tags == 'warning'%}
+                <script>M.toast({html: "{{message}}", classes: 'red rounded', displayLength:10000});</script>
+            {% elif message.tags == 'error'%}
+                <script>M.toast({html: "{{message}}", classes: 'red rounded', displayLength:10000});</script>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+  </body>
+</html>

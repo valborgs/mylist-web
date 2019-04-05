@@ -106,12 +106,14 @@ class MylistTitle(models.Model):
                               default=None,
                               on_delete=models.SET_NULL,
                               null=True,
+                              blank=True,
                               related_name='genre2')
     genre3 = models.ForeignKey(MylistGenre,
                               verbose_name="Genres",
                               default=None,
                               on_delete=models.SET_NULL,
                               null=True,
+                              blank=True,
                               related_name='genre3')
 
     production = models.ForeignKey(MylistProduction,

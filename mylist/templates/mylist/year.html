@@ -1,3 +1,6 @@
+{% extends 'mylist/layout.html' %}
+
+{% main block %}
 <a href="{% url 'mylist:mainpage' %}">mainpage</a>
 <a href="{% url 'mylist:mylist' %}">mylist</a>
 <h1>{{ datas.year }}</h1>
@@ -7,3 +10,4 @@
         <p><a href="{% url 'mylist:title_detail' title_slug=title.title_slug %}">{{ title }}</a></p>
     {% endfor %}
 </div>
+{% endblock %}
