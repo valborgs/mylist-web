@@ -3,6 +3,7 @@
 {% block main %}
 <a href="{% url 'mylist:mainpage' %}">mainpage</a>
 <a href="{% url 'mylist:mylist' %}">mylist</a>
+<a href="{% url 'mylist:production_list' %}">productions</a>
 <h1>{{ datas.production_name }}</h1>
 <div class="content">
     <p>설명: {{ datas.production_info }}</p>

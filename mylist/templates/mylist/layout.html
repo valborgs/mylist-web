@@ -13,18 +13,12 @@
   </head>
   <body>
     <header>
-      {% block header %}
-      {% include "mylist/header.html" %}
-      {% endblock %}
     </header>
     <main>
       {% block main %}
       {% endblock %}
     </main>
     <footer class="page-footer" style="padding-top:10px; margin-top:10px;">
-      {% block footer %}
-      {% include "mylist/footer.html" %}
-      {% endblock %}
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src={% static "js/materialize.min.js" %}></script>

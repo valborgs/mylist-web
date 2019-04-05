@@ -1,8 +1,9 @@
 {% extends 'mylist/layout.html' %}
 
-{% main block %}
+{% block main %}
 <a href="{% url 'mylist:mainpage' %}">mainpage</a>
 <a href="{% url 'mylist:mylist' %}">mylist</a>
+<a href="{% url 'mylist:genre_list' %}">genres</a>
 <h1>{{ datas.genre_name }}</h1>
 <div class="content">
   연관작품
