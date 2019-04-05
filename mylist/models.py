@@ -18,6 +18,8 @@ class MylistQuarter(models.Model):
 class MylistYear(models.Model):
     year = models.IntegerField(unique=True)
 
+    production_img = models.ImageField(default='default.gif', upload_to='productions')
+
     year_slug = models.SlugField(blank=True, allow_unicode=True, unique=True, db_index=True)
 
     class Meta:
@@ -25,6 +27,16 @@ class MylistYear(models.Model):
 
     def __str__(self):
         return str(self.year)
+
+    def imgsave(self, *args, **kwargs):
+        super(MylistProduction, self).save(*args, **kwargs)
+
+        img = Image.open(self.production_img.path)
+
+        if img.height > 320 or img.width > 320:
+            output_size = (320,320)
+            img.thumbnail(output_size)
+            img.save(self.image.path)
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         self.year_slug = slugify(self.year, allow_unicode=True)
@@ -34,7 +46,7 @@ class MylistYear(models.Model):
 class MylistProduction(models.Model):
     production_name = models.CharField(max_length=200, unique=True)
     production_info = models.TextField()
-    production_img = models.ImageField(default='default.gif', upload_to='profile_pics')
+    production_img = models.ImageField(default='default.gif', upload_to='productions')
 
     production_slug = models.SlugField(blank=True, allow_unicode=True, unique=True, db_index=True)
 
@@ -63,7 +75,7 @@ class MylistProduction(models.Model):
 
 class MylistGenre(models.Model):
     genre_name = models.CharField(max_length=100, unique=True)
-    genre_img = models.ImageField(default='default.gif', upload_to='profile_pics')
+    genre_img = models.ImageField(default='default.gif', upload_to='genres')
 
     genre_slug = models.SlugField(blank=True, allow_unicode=True, unique=True, db_index=True)
 
@@ -93,7 +105,7 @@ class MylistGenre(models.Model):
 class MylistTitle(models.Model):
     title = models.CharField(max_length=200, unique=True)
     summary = models.TextField()
-    title_img = models.ImageField(default='default.gif', upload_to='profile_pics')
+    title_img = models.ImageField(default='default.gif', upload_to='titles')
 
     title_slug = models.SlugField(blank=True, allow_unicode=True, unique=True, db_index=True)
 

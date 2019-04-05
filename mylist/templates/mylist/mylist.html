@@ -7,8 +7,12 @@
 <a href="{% url 'mylist:genre_list' %}">Genres</a>
 <a href="{% url 'mylist:year_list' %}">Years</a>
 <div class="list">
-  {% for data in datas %}
-      <p><a href="{% url 'mylist:title_detail' title_slug=data.title_slug %}">{{ data.title }}</a></p>
-  {% endfor %}
+  <table>
+      {% for data in datas %}
+      <tr>
+        <th><img src="{{ data.title_img.url }}" alt="title image"><a href="{% url 'mylist:title_detail' title_slug=data.title_slug %}">{{ data.title }}</a></th>
+      </tr>
+      {% endfor %}
+  </table>
 </div>
 {% endblock %}

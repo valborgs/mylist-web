@@ -5,8 +5,12 @@
 <a href="{% url 'mylist:mylist' %}">mylist</a>
 <h1>Genres</h1>
 <div class="list">
-  {% for data in datas %}
-      <p><a href="{% url 'mylist:genre_detail' genre_slug=data.genre_slug %}">{{ data.genre_name }}</a></p>
-  {% endfor %}
+  <table>
+    {% for data in datas %}
+    <tr>
+      <td><img src="{{ data.genre_img.url }}" alt="genre image">{{ data.genre_name }}</td>
+    </tr>
+    {% endfor %}
+  </table>
 </div>
 {% endblock %}
